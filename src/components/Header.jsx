@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <header className="header">
       <div className="header-left">
-        <a href="/" style={{ display: 'flex', alignItems: 'center' }}>
+        <a href={import.meta.env.BASE_URL} style={{ display: 'flex', alignItems: 'center' }}>
           <Logo />
         </a>
       </div>

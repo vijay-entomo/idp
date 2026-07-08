@@ -88,7 +88,7 @@ const Sidebar = () => {
         <a href="#" className="nav-item">
           <Share2 size={20} />
         </a>
-        <a href="/" className="nav-item active">
+        <a href={import.meta.env.BASE_URL} className="nav-item active">
           <Shield size={20} />
         </a>
         <a href="#" className="nav-item">
