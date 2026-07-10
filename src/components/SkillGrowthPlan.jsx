@@ -200,10 +200,10 @@ const SkillGrowthPlan = ({ onComplete }) => {
         progress: 0
       }))
     }));
-    
+
     localStorage.setItem('idp_draft', JSON.stringify(formattedPlans));
     localStorage.setItem('idp_title', planTitle || 'My Growth Plan');
-    
+
     if (onComplete) {
       onComplete();
     }
@@ -402,7 +402,7 @@ const SkillGrowthPlan = ({ onComplete }) => {
         <div className="ai-sidebar-header">
           <img src={alexAvatar} alt="AI Coach" className="ai-coach-small-avatar" />
           <div>
-            <h4>IDP Co-Pilot</h4>
+            <h4>IDP Agent</h4>
           </div>
         </div>
 

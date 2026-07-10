@@ -413,22 +413,22 @@
 }
 
 .detail-content-card {
-  background-color: #ffffff;
-  border-radius: 16px;
-  padding: 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  /* background-color: #ffffff; */
+  /* border-radius: 16px; */
+  /* padding: 20px; */
+  /* box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03); */
 }
 
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 32px;
+  margin-bottom: 20px;
 }
 
 .card-header-left h2 {
-  font-size: 24px;
-  font-weight: 800;
+  font-size: 20px;
+  font-weight: 700;
   color: #0f172a;
   margin-bottom: 0px;
 }
@@ -486,6 +486,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  height: 100%;
   background-color: #f8fafc;
 }
 
