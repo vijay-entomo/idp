@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entomo - Rethink IDP Prototype</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar">
+        <div class="logo"></div>
+        <div class="nav-item"><i class='bx bx-home-alt'></i></div>
+        <div class="nav-item active"><i class='bx bx-shield'></i></div>
+        <div class="nav-item"><i class='bx bx-bar-chart-alt-2'></i></div>
+        <div class="nav-item" style="margin-top: auto;"><i class='bx bx-cog'></i></div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+        <header class="header">
+            <h1 class="header-title">Career Intelligence Hub</h1>
+            <div style="display: flex; gap: 16px; align-items: center;">
+                <span style="font-weight: 500;">Alex</span>
+                <img src="https://ui-avatars.com/api/?name=Alex&background=5d5fef&color=fff" alt="User" style="width: 36px; border-radius: 50%;">
+            </div>
+        </header>
+
+        <div class="dashboard-grid">
+            
+            <!-- Left Side: IDP Work Area -->
+            <div class="content-scroll">
+                
+                <!-- Page Title & Subtext -->
+                <div style="margin-bottom: 8px;">
+                    <h2 style="font-size: 28px; font-weight: 700; color: var(--text-main); margin-bottom: 8px; font-family: 'Playfair Display', serif;">Individual Development Plan</h2>
+                    <p style="color: var(--text-muted); font-size: 15px; line-height: 1.5;">Map your trajectory, track skill gaps, and collaborate with your mentors in real-time. Upload your latest performance review to let our AI kickstart your plan.</p>
+                </div>
+                
+                <!-- Point 6: Seamless Document Integration -->
+                <div class="dropzone" id="docDropzone">
+                    <i class='bx bx-cloud-upload floating-icon'></i>
+                    <h3>Drop your Performance Review or Target Job Description here</h3>
+                    <p>Our AI will instantly parse the document and extract your core skill gaps to build the first draft of your IDP.</p>
+                </div>
+
+                <!-- Point 2 & 5: Data-Driven Start & Dynamic Feedback Loops -->
+                <div class="stats-row">
+                    <!-- Stat Card 1: Radar Chart (Data-Driven Start) -->
+                    <div class="stat-card">
+                        <h4>Skill Gap Radar (Current vs. Target)</h4>
+                        <div class="radar-chart-mock"></div>
+                        <p style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 8px;">Target: Staff Engineer</p>
+                    </div>
+
+                    <!-- Stat Card 2: Promotion Readiness Score (Dynamic Feedback) -->
+                    <div class="stat-card" style="display: flex; flex-direction: column; justify-content: center;">
+                        <h4>Promotion Readiness Score</h4>
+                        <div class="score-display">
+                            <span class="score-value" id="impactScore">64</span>
+                            <span style="font-size: 24px; color: #cbd5e1; margin-bottom: 6px;">/ 100</span>
+                        </div>
+                        <div class="score-trend" style="margin-top: 12px;">
+                            <i class='bx bx-trending-up'></i> +12 pts from last IDP update
+                        </div>
+                        <p style="font-size: 13px; color: var(--text-muted); margin-top: 12px;">Adding 'System Design Mentorship' will boost this to 78.</p>
+                    </div>
+                </div>
+
+                <!-- Point 3 & 4: Interactive Node Journey & Collaboration -->
+                <div class="journey-container">
+                    <h3>Your Growth Journey</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 32px;">Visually map out the milestones to reach Staff Engineer.</p>
+                    
+                    <div class="node-map">
+                        <div class="path-line">
+                            <div class="path-line-active"></div>
+                        </div>
+                        
+                        <!-- Node 1 -->
+                        <div class="node completed" style="left: 10%;">
+                            <i class='bx bx-check'></i>
+                            <div class="comment-bubble" style="bottom: 120%; left: 50%; transform: translateX(-50%);">
+                                <span class="comment-author">Manager Sarah</span>
+                                Great work finishing the AWS cert early!
+                            </div>
+                        </div>
+                        
+                        <!-- Node 2 -->
+                        <div class="node active" style="left: 40%;">
+                            <div class="comment-bubble" style="bottom: 120%; left: 50%; transform: translateX(-50%);">
+                                <span class="comment-author">Mentor Dave</span>
+                                I suggest we focus on GraphQL integration for this milestone.
+                            </div>
+                        </div>
+                        
+                        <!-- Node 3 -->
+                        <div class="node" style="left: 70%;">
+                            <div class="comment-bubble" style="bottom: 120%; left: 50%; transform: translateX(-50%);">
+                                <span class="comment-author">AI Coach</span>
+                                Tip: Leading a cross-functional project here will satisfy your leadership criteria.
+                            </div>
+                        </div>
+                        
+                        <!-- Node 4 -->
+                        <div class="node" style="left: 90%;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Point 1: Omnipresent AI Co-Pilot -->
+            <aside class="ai-panel">
+                <div class="ai-header">
+                    <div class="ai-avatar"><i class='bx bx-bot'></i></div>
+                    <div>
+                        <h4 style="font-size: 15px;">Co-Pilot</h4>
+                        <span style="font-size: 12px; color: var(--success);"><i class='bx bxs-circle' style="font-size: 8px;"></i> Online & Observing</span>
+                    </div>
+                </div>
+                
+                <div class="ai-content" id="aiContent">
+                    <p style="font-size: 14px; color: var(--text-muted);">I'm analyzing your current IDP draft. Here are some real-time suggestions based on your target role:</p>
+                    
+                    <div class="ai-suggestion">
+                        <h5><i class='bx bx-bulb'></i> Skill Gap Detected</h5>
+                        <p>You have "System Architecture" as a goal, but no measurable activities attached yet.</p>
+                        <button class="btn-sm" onclick="increaseScore()">Auto-fill Courses</button>
+                    </div>
+
+                    <div class="ai-suggestion" style="animation-delay: 0.2s;">
+                        <h5><i class='bx bx-user-voice'></i> Collaboration Nudge</h5>
+                        <p>Sarah (Manager) hasn't reviewed milestone 2. Want me to draft a quick ping for her?</p>
+                        <button class="btn-sm" style="background: white; color: var(--primary); border: 1px solid var(--primary);">Draft Ping</button>
+                    </div>
+                </div>
+
+                <div class="ai-input">
+                    <div class="ai-input-box">
+                        <input type="text" placeholder="Ask me to adjust your plan...">
+                        <i class='bx bx-send' style="color: var(--primary); font-size: 20px; cursor: pointer;"></i>
+                    </div>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

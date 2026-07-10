@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entomo - IDP Templates</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <aside class="sidebar">
+        <ul class="nav-links" style="margin-top: 80px;">
+            <li class="nav-item"><a href="#" class="nav-link"><i class='bx bx-home-alt'></i></a></li>
+            <li class="nav-item active"><a href="#" class="nav-link"><i class='bx bx-shield'></i></a></li>
+        </ul>
+    </aside>
+
+    <div class="main-wrapper">
+        <header class="header">
+            <div class="header-left">
+                <div class="logo" style="cursor: pointer;" onclick="window.location.href='index.html'">
+                    <div class="logo-icon">
+                        <span class="red-box"></span>
+                        <span class="green-box"></span>
+                        <span class="blue-box"></span>
+                    </div>
+                    <span class="logo-text">entomo</span>
+                </div>
+            </div>
+        </header>
+
+        <main class="content-area" style="padding: 40px;">
+            <a href="index.html" class="back-link"><i class='bx bx-left-arrow-alt'></i> Back to Options</a>
+            <h1 class="serif-title" style="font-size: 32px; margin-bottom: 16px;">Browse IDP Templates</h1>
+            <p style="color: #6b7280; margin-bottom: 40px;">Select a pre-built pathway curated by our HR experts to accelerate your development.</p>
+
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;">
+                <div class="goal-card" style="cursor: pointer;">
+                    <div class="goal-header">
+                        <h3 style="font-size: 18px; font-weight: 600; color: #111827;">First-Time Manager Path</h3>
+                    </div>
+                    <p style="color: #4b5563; font-size: 14px; margin-bottom: 16px;">Core skills for transitioning from individual contributor to team lead.</p>
+                    <span class="badge" style="background: #e6f0ff; color: #0056b3;">Management</span>
+                </div>
+                <div class="goal-card" style="cursor: pointer;">
+                    <div class="goal-header">
+                        <h3 style="font-size: 18px; font-weight: 600; color: #111827;">Agile Foundations</h3>
+                    </div>
+                    <p style="color: #4b5563; font-size: 14px; margin-bottom: 16px;">Learn scrum methodologies, sprint planning, and backlog refinement.</p>
+                    <span class="badge" style="background: #fef3c7; color: #f59e0b;">Operations</span>
+                </div>
+                <div class="goal-card" style="cursor: pointer;">
+                    <div class="goal-header">
+                        <h3 style="font-size: 18px; font-weight: 600; color: #111827;">Path to Staff Engineer</h3>
+                    </div>
+                    <p style="color: #4b5563; font-size: 14px; margin-bottom: 16px;">System design, cross-functional leadership, and technical strategy.</p>
+                    <span class="badge" style="background: #f5f3ff; color: #5d5fef;">Engineering</span>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

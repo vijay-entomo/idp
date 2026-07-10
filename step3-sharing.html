@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entomo - Development Plans</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Using Phosphor Icons or similar for quick icons, we can use a CDN for an icon set like Boxicons or FontAwesome -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <!-- Space for logo if needed, but in screenshot logo is in the header -->
+        </div>
+        
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='bx bx-home-alt'></i></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='bx bx-bar-chart-alt-2'></i></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='bx bx-share-alt'></i></a>
+            </li>
+            <li class="nav-item active">
+                <a href="#" class="nav-link"><i class='bx bx-shield'></i></a> <!-- Represents the active tab -->
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='bx bx-bulb'></i></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='bx bx-group'></i></a>
+            </li>
+        </ul>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="nav-link"><i class='bx bx-map-alt'></i></a>
+            <a href="#" class="nav-link"><i class='bx bx-water'></i></a>
+        </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <!-- entomo logo -->
+                <div class="logo" style="cursor: pointer;" onclick="window.location.href='index.html'">
+                    <div class="logo-icon">
+                        <span class="red-box"></span>
+                        <span class="green-box"></span>
+                        <span class="blue-box"></span>
+                    </div>
+                    <span class="logo-text">entomo</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="icon-btn">
+                    <i class='bx bx-text'></i>
+                </button>
+                <button class="icon-btn">
+                    <i class='bx bx-bell'></i>
+                    <span class="badge"></span>
+                </button>
+                
+                <div class="user-profile">
+                    <div class="avatar"></div>
+                    <span class="username">Alex</span>
+                    <i class='bx bx-chevron-down text-blue'></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="content-area">
+<div id="step-activities" class="wizard-container" style="display: block;">
+                
+<div class="wizard-content">
+                    <div class="form-area" style="width: 100%; max-width: 800px; margin: 0 auto;">
+                        <div class="stepper" style="padding: 0; margin-bottom: 32px;">
+                            <div class="step completed"><div class="step-circle"><i class='bx bx-check'></i></div></div>
+                            <div class="step-line active-line"></div>
+                            <div class="step completed"><div class="step-circle"><i class='bx bx-check'></i></div></div>
+                            <div class="step-line active-line"></div>
+                            <div class="step active"><div class="step-circle">3</div></div>
+                        </div>
+                        <h1 class="serif-title wizard-title" style="margin-bottom: 8px;">Who should be able to view and collaborate on this plan?</h1>
+                        <p class="wizard-subtitle" style="margin-bottom: 32px;">Choose your visibility settings for this skill growth plan.</p>
+
+                        <div class="option-cards" style="display: flex; flex-direction: column; gap: 16px;">
+                            <!-- Only Me -->
+                            <div class="option-card" onclick="selectShareOption(this)" style="cursor: pointer; padding: 24px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e5e7eb; border-radius: 12px; transition: all 0.2s;">
+                                <div>
+                                    <h3 style="font-size: 16px; margin-bottom: 4px; color: #111827;">Only Me</h3>
+                                    <p class="option-desc" style="margin-bottom: 0; color: #6b7280; font-size: 14px;">Only you can view and edit this plan. Perfect for personal goals or draft ideas.</p>
+                                </div>
+                                <i class='bx bx-circle check-icon' style="font-size: 24px; color: #d1d5db;"></i>
+                            </div>
+                            
+                            <!-- My Supervisor -->
+                            <div class="option-card selected" onclick="selectShareOption(this)" style="cursor: pointer; padding: 24px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #5d5fef; background-color: #f5f3ff; border-radius: 12px; transition: all 0.2s;">
+                                <div>
+                                    <h3 style="font-size: 16px; margin-bottom: 4px; color: #111827;">My Supervisor</h3>
+                                    <p class="option-desc" style="margin-bottom: 0; color: #6b7280; font-size: 14px;">Share this plan with your supervisor to collaborate, align on expectations, and receive feedback.</p>
+                                </div>
+                                <i class='bx bxs-check-circle check-icon' style="font-size: 24px; color: #5d5fef;"></i>
+                            </div>
+                            
+                            <!-- My Mentor -->
+                            <div class="option-card" onclick="selectShareOption(this)" style="cursor: pointer; padding: 24px; display: flex; justify-content: space-between; align-items: center; border: 1px solid #e5e7eb; border-radius: 12px; transition: all 0.2s;">
+                                <div>
+                                    <h3 style="font-size: 16px; margin-bottom: 4px; color: #111827;">My Mentor</h3>
+                                    <p class="option-desc" style="margin-bottom: 0; color: #6b7280; font-size: 14px;">Share this plan with your mentor to get guidance, professional advice, and skill mentorship.</p>
+                                </div>
+                                <i class='bx bx-circle check-icon' style="font-size: 24px; color: #d1d5db;"></i>
+                            </div>
+                        </div>
+
+                        <div class="form-actions" style="margin-top: 40px;">
+                            <button class="btn btn-outline" onclick="window.location.href='step2-activities.html'">Back</button>
+                            <button class="btn btn-primary btn-icon" onclick="alert('Plan completed!')">Complete Plan <i class='bx bx-check-circle'></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 4: ROADMAP -->
+            
+</main>
+    </div>
+
+    <script>
+        function selectShareOption(element) {
+            // Reset all
+            document.querySelectorAll('.option-card').forEach(card => {
+                card.classList.remove('selected');
+                card.style.borderColor = '#e5e7eb';
+                card.style.backgroundColor = 'transparent';
+                
+                const icon = card.querySelector('.check-icon');
+                icon.className = 'bx bx-circle check-icon';
+                icon.style.color = '#d1d5db';
+            });
+            
+            // Set active
+            element.classList.add('selected');
+            element.style.borderColor = '#5d5fef';
+            element.style.backgroundColor = '#f5f3ff';
+            
+            const activeIcon = element.querySelector('.check-icon');
+            activeIcon.className = 'bx bxs-check-circle check-icon';
+            activeIcon.style.color = '#5d5fef';
+        }
+
+        function addBlankGoal() {
+            document.getElementById('goals-empty-state').style.display = 'none';
+            const goalsList = document.getElementById('goals-list');
+            goalsList.style.display = 'block';
+
+            const newGoalHtml = `
+                <div class="goal-card" style="border-color: #5d5fef;">
+                    <div class="goal-header">
+                        <div class="goal-title-wrapper">
+                            <h3 contenteditable="true" style="border-bottom: 1px dashed #ccc; min-width: 200px; outline: none;">New Goal Title...</h3>
+                            <span class="badge badge-medium">NEW</span>
+                        </div>
+                        <button class="btn-icon-only"><i class='bx bx-pencil'></i></button>
+                    </div>
+                    <div class="goal-criteria">
+                        <span class="criteria-label">SUCCESS CRITERIA</span>
+                        <p contenteditable="true" style="border-bottom: 1px dashed #ccc; outline: none;">Define how you will measure success...</p>
+                    </div>
+                </div>
+            `;
+            goalsList.insertAdjacentHTML('beforeend', newGoalHtml);
+        }
+    </script>
+</body>
+</html>

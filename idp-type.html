@@ -81,7 +81,8 @@
 
         <!-- MAIN CONTENT AREA -->
         <main class="content-area" style="padding: 0; overflow: hidden;">
-<div id="step-selection" class="welcome-full-wrapper" style="display: block;">
+            <!-- STEP 1b: IDP TYPE SELECTION -->
+            <div id="step-idp-type" class="welcome-full-wrapper" style="display: block;">
                 <div class="welcome-card">
                     <div class="welcome-left">
                         <div class="welcome-left-content">
@@ -94,48 +95,35 @@
                                     <span class="status-text">AI Career Coach</span>
                                 </div>
                             </div>
-                            <h1 class="welcome-greeting">Hey. Your career isn't going to build itself — so let's build it together.</h1>
+                            <h1 class="welcome-greeting">Great choice. What kind of plan are we building today?</h1>
                         </div>
                     </div>
                     
-                    <div class="welcome-right" style="max-height: 100%; overflow: hidden; display: flex; flex-direction: column;">
-                        <div class="welcome-right-content" style="flex: 1; overflow-y: auto; padding-right: 16px; padding-bottom: 24px;">
-                            <h2 class="welcome-question" style="position: sticky; top: 0; background: #fff; z-index: 10; padding-bottom: 16px; margin-bottom: 0;">How would you like me to start?</h2>
+                    <div class="welcome-right">
+                        <div class="welcome-right-content">
+                            <a href="index.html" class="back-link"><i class='bx bx-left-arrow-alt'></i> Back</a>
+                            <h2 class="welcome-question">Select an IDP type</h2>
                             
-                            <div class="option-cards" style="margin-top: 16px;">
-                                <!-- AI Option (Now First) -->
-                                <div class="option-card ai-option" onclick="window.location.href='ai-chat.html'">
-                                    <h3>Create with AI Coach</h3>
-                                    <p class="option-desc">Have an intelligent conversation to identify your skill gaps and get tailored recommendations.</p>
-                                    <ul class="option-features">
-                                        <li><i class='bx bx-check'></i> 2-minute conversational goal setting</li>
-                                        <li><i class='bx bx-check'></i> Automatic skill gap analysis</li>
-                                        <li><i class='bx bx-check'></i> Personalized learning suggestions</li>
-                                    </ul>
-                                    <div class="option-badge">
-                                        <i class='bx bx-sparkles'></i> Recommended
-                                    </div>
+                            <div class="option-cards">
+                                <!-- Option 1 -->
+                                <div class="option-card" onclick="window.location.href='step1-basic.html'">
+                                    <h3>Create a skill growth plan</h3>
+                                    <p class="option-desc" style="margin-bottom: 0;">Build skills for your current role or prepare for the next one.</p>
                                 </div>
 
-                                <!-- Manual Option -->
-                                <div class="option-card" onclick="window.location.href='idp-type.html'">
-                                    <h3>Create Manually</h3>
-                                    <p class="option-desc">I already know what I want to work on. Build a structured plan with specific goals.</p>
-                                    <ul class="option-features">
-                                        <li><i class='bx bx-check'></i> Step-by-step guided form</li>
-                                        <li><i class='bx bx-check'></i> Manually select learning resources</li>
-                                        <li><i class='bx bx-check'></i> Complete control over milestones</li>
-                                    </ul>
+                                <!-- Option 2 -->
+                                <div class="option-card" onclick="window.location.href='step1-basic.html'">
+                                    <h3>Grow beyond my role</h3>
+                                    <p class="option-desc" style="margin-bottom: 0;">Focus on habits, mindset, or wellbeing beyond my role.</p>
+                                </div>
+                                
+                                <!-- Option 3 -->
+                                <div class="option-card" onclick="window.location.href='step1-performance.html'">
+                                    <h3>Improve a performance goal</h3>
+                                    <p class="option-desc" style="margin-bottom: 0;">Build a focused plan around a performance or business goal.</p>
                                 </div>
 
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- STEP 1b: IDP TYPE SELECTION -->
+            <!-- STEP: AI CHAT -->
             
 </main>
     </div>

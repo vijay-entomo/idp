@@ -1,0 +1,1113 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>entomo - Development Plans</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --bg-page: #f9fafb;
+        --bg-card: #ffffff;
+        --border: #e5e7eb;
+        --text-main: #111827;
+        --text-muted: #6b7280;
+        --accent: #5d5fef;
+        --radius-md: 8px;
+        --radius-lg: 12px;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background-color: var(--bg-page);
+        color: var(--text-main);
+        margin: 0;
+        padding: 0;
+      }
+
+      .premium-title {
+        font-size: 36px;
+        font-weight: 700;
+        letter-spacing: -0.03em;
+        color: var(--text-main);
+        margin-bottom: 8px;
+        line-height: 1.1;
+      }
+
+      .premium-subtitle {
+        font-size: 16px;
+        color: var(--text-muted);
+        letter-spacing: -0.01em;
+        max-width: 65ch;
+        line-height: 1.5;
+      }
+
+      .section-card {
+        background: var(--bg-card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 20px;
+        margin-bottom: 24px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+        transition: border-color 0.2s;
+      }
+
+      .section-card:hover {
+        border-color: #d1d5db;
+      }
+
+      .section-header {
+        margin-bottom: 32px;
+      }
+
+      .section-header h2 {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: var(--text-main);
+        margin-bottom: 4px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .step-badge {
+        background: var(--text-main);
+        color: white;
+        width: 24px;
+        height: 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 4px;
+        font-size: 12px;
+        font-weight: 600;
+      }
+
+      .input-clean {
+        width: 100%;
+        padding: 12px 16px;
+        background: #f3f4f6;
+        border: 1px solid transparent;
+        border-radius: var(--radius-md);
+        font-size: 14px;
+        color: var(--text-main);
+        transition: all 0.2s;
+        font-family: inherit;
+      }
+
+      .input-clean:focus {
+        outline: none;
+        background: #ffffff;
+        border-color: var(--accent);
+        box-shadow: 0 0 0 4px rgba(93, 95, 239, 0.1);
+      }
+
+      .label-clean {
+        display: block;
+        font-size: 13px;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 8px;
+      }
+
+      /* AI Component without the purple slop */
+      .ai-assistant-block {
+        background: #f9fafb;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .btn-sharp {
+        background: var(--text-main);
+        color: white;
+        border: none;
+        padding: 10px 16px;
+        border-radius: var(--radius-md);
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .btn-sharp:hover {
+        background: #374151;
+      }
+
+      .btn-sharp:disabled {
+        background: #e5e7eb;
+        color: #9ca3af;
+        cursor: not-allowed;
+      }
+
+      @keyframes softPulse {
+        0% {
+          box-shadow: 0 0 0 0 rgba(93, 95, 239, 0.4);
+        }
+        70% {
+          box-shadow: 0 0 0 6px rgba(93, 95, 239, 0);
+        }
+        100% {
+          box-shadow: 0 0 0 0 rgba(93, 95, 239, 0);
+        }
+      }
+      .btn-pulse {
+        animation: softPulse 2s infinite;
+      }
+
+      .btn-ghost {
+        background: transparent;
+        color: var(--text-main);
+        border: 1px solid var(--border);
+        padding: 10px 16px;
+        border-radius: var(--radius-md);
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+
+      .btn-ghost:hover {
+        background: #f3f4f6;
+      }
+
+      .share-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+
+      .share-card {
+        border: 1px solid var(--border);
+        border-radius: var(--radius-md);
+        padding: 24px;
+        cursor: pointer;
+        transition: all 0.2s;
+        background: #ffffff;
+      }
+
+      .share-card.active {
+        border-color: var(--text-main);
+        box-shadow: 0 0 0 1px var(--text-main);
+      }
+
+      .share-card h3 {
+        font-size: 14px;
+        font-weight: 600;
+        margin-bottom: 4px;
+        color: var(--text-main);
+      }
+
+      .share-card p {
+        font-size: 13px;
+        color: var(--text-muted);
+        line-height: 1.5;
+      }
+    </style>
+  </head>
+  <body>
+    <aside
+      class="sidebar"
+      style="justify-content: space-between; padding: 24px 0"
+    >
+      <ul class="nav-links" style="margin-top: 8px">
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-home-alt"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-bar-chart-alt-2"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-share-alt"></i></a>
+        </li>
+        <li class="nav-item active">
+          <a href="#" class="nav-link"><i class="bx bx-shape-polygon"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-bulb"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-group"></i></a>
+        </li>
+      </ul>
+      <ul class="nav-links" style="gap: 16px; margin-bottom: 8px">
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-plug"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-line-chart"></i></a>
+        </li>
+      </ul>
+    </aside>
+
+    <div class="main-wrapper">
+      <header
+        class="header"
+        style="
+          background-color: #ffffff;
+          border-bottom: 1px solid var(--border);
+        "
+      >
+        <div class="header-left">
+          <div
+            class="logo"
+            style="cursor: pointer"
+            onclick="window.location.href = 'index.html'"
+          >
+            <div class="logo-icon">
+              <span class="red-box"></span>
+              <span class="green-box"></span>
+              <span class="blue-box"></span>
+            </div>
+            <span class="logo-text">entomo</span>
+          </div>
+        </div>
+        <div class="header-right" style="gap: 12px">
+          <button class="icon-btn" title="Language">
+            <i class="bx bx-globe"></i>
+          </button>
+          <button class="icon-btn" title="Notifications">
+            <i class="bx bx-bell"></i><span class="badge"></span>
+          </button>
+          <div class="user-profile" style="gap: 10px; padding: 4px 8px">
+            <div
+              style="
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background: #f3f4f6;
+                color: var(--text-main);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 12px;
+                font-weight: 700;
+              "
+            >
+              AG
+            </div>
+            <span
+              style="font-size: 14px; font-weight: 500; color: var(--text-main)"
+              >Alex</span
+            >
+            <i
+              class="bx bx-chevron-down"
+              style="color: var(--text-muted); font-size: 18px"
+            ></i>
+          </div>
+        </div>
+      </header>
+
+      <main class="content-area" style="padding: 24px; overflow-y: auto">
+        <div style="width: 100%; margin: 0 auto">
+          <div style="margin-bottom: 32px">
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 8px;
+                font-size: 13px;
+                margin-bottom: 8px;
+              "
+            >
+              <a
+                href="index.html"
+                style="
+                  color: var(--accent);
+                  text-decoration: none;
+                  font-weight: 500;
+                "
+                >Development Plans</a
+              >
+              <i
+                class="bx bx-chevron-right"
+                style="color: var(--text-muted)"
+              ></i>
+              <span style="color: var(--text-muted)"
+                >Create Development ...</span
+              >
+            </div>
+            <h1
+              style="
+                font-size: 22px;
+                font-weight: 700;
+                color: var(--text-main);
+                letter-spacing: -0.01em;
+              "
+            >
+              Create Development Plan
+            </h1>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 2fr 1fr;
+              gap: 24px;
+              position: relative;
+            "
+          >
+            <!-- Main Form Column -->
+            <div style="display: flex; flex-direction: column; gap: 24px">
+              <!-- Plan Title (Outside) -->
+              <div style="margin-bottom: 8px">
+                <label
+                  class="label-clean"
+                  style="
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: var(--text-muted);
+                    margin-bottom: 8px;
+                    display: block;
+                  "
+                  >Plan Title</label
+                >
+                <input
+                  type="text"
+                  id="plan-title"
+                  class="input-clean"
+                  placeholder="e.g. Staff Engineer Transition"
+                  style="
+                    font-size: 24px;
+                    font-weight: 700;
+                    background: transparent;
+                    border: none;
+                    padding: 0;
+                    box-shadow: none;
+                    color: var(--text-main);
+                  "
+                />
+              </div>
+
+              <!-- Main Unified Box -->
+              <div class="section-card" id="section-1">
+                <div id="goals-accordion-list" style="display: flex; flex-direction: column; gap: 12px;">
+                  <div class="activity-card" style="padding: 0; overflow: hidden; animation: slideIn 0.3s ease-out; margin-bottom: 0;">
+                    
+                    <!-- Accordion Header -->
+                    <div style="background: transparent; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.2s;"
+                         onmouseover="this.style.background='#f9fafb'"
+                         onmouseout="this.style.background='transparent'"
+                         onclick="const body = this.nextElementSibling; const icon = this.querySelector('.chevron-icon'); if (body.style.gridTemplateRows === '1fr') { body.style.gridTemplateRows = '0fr'; icon.style.transform = 'rotate(0deg)'; } else { body.style.gridTemplateRows = '1fr'; icon.style.transform = 'rotate(90deg)'; }">
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-weight: 600; font-size: 14px; color: var(--text-main);">Primary Goal</span>
+                            <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">Set your target skill and outcome</span>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <button class="btn-ghost" style="padding: 4px; border: none; color: var(--text-muted); min-width: auto; height: auto;" onclick="event.stopPropagation(); this.closest('.activity-card').remove()" title="Remove Goal">
+                                <i class='bx bx-trash' style="font-size: 18px;"></i>
+                            </button>
+                            <i class='bx bx-chevron-right chevron-icon' style="font-size: 20px; color: var(--text-muted); transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); transform: rotate(90deg);"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Accordion Body (Animated using Grid) -->
+                    <div style="display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.3s cubic-bezier(0.25, 1, 0.5, 1); background: transparent; border-top: 1px solid var(--border);">
+                        <div style="overflow: hidden;">
+                            <div style="padding: 24px; display: flex; flex-direction: column; gap: 24px;">
+                                <div>
+                                  <label class="label-clean">Target Skill <span style="color: #ef4444">*</span></label>
+                                  <div style="position: relative">
+                                    <div style="border: 1px solid var(--border); border-radius: var(--radius-md); padding: 8px 12px; background: #f9fafb; display: flex; align-items: center; transition: border-color 0.2s; flex-wrap: wrap; gap: 8px;" onclick="document.getElementById('skill-input').focus()">
+                                      <i class="bx bx-search" style="color: var(--text-muted); font-size: 18px"></i>
+                                      <div id="skill-tags" style="display: flex; gap: 6px; flex-wrap: wrap"></div>
+                                      <input type="text" id="skill-input" class="input-clean" style="background: transparent; border: none; padding: 0; box-shadow: none; flex: 1; min-width: 150px; outline: none;" placeholder="Add a skill, or click Generate for AI ideas..." />
+                                    </div>
+                                    <div id="skill-dropdown" style="display: none; position: absolute; top: 100%; left: 0; right: 0; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); margin-top: 4px; z-index: 20; max-height: 200px; overflow-y: auto;">
+                                      <!-- JS will populate options -->
+                                    </div>
+                                  </div>
+                                </div>
+
+                                <div>
+                                  <label class="label-clean">Expected Outcome</label>
+                                  <textarea id="outcome-textarea" class="input-clean" rows="4" placeholder="What exactly do you want to achieve?"></textarea>
+                                </div>
+                                
+                                <hr style="border: none; border-top: 1px solid var(--border); margin: 8px 0;" />
+                                
+                                <div>
+                                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+                                    <h3 style="margin: 0; font-size: 16px; font-weight: 600">Activities</h3>
+                                    <p style="margin: 0; font-size: 13px; color: var(--text-muted);">Generate development activities based on your selected skills.</p>
+                                  </div>
+
+                                  <div style="display: flex; justify-content: flex-end; margin-bottom: 24px;">
+                                    <div class="dropdown-container" style="display: flex; height: 42px">
+                                      <button id="generate-btn" class="btn-sharp btn-pulse" onclick="generateFromSkill(this)" style="height: 42px; padding: 0 24px; border-top-right-radius: 0; border-bottom-right-radius: 0; white-space: nowrap;">
+                                        <i class="bx bx-bot"></i> Auto-Generate Activity
+                                      </button>
+                                      <div style="position: relative">
+                                        <button id="generate-dropdown-btn" class="btn-sharp" onclick="toggleDropdown(this)" style="height: 42px; padding: 0 12px; border-top-left-radius: 0; border-bottom-left-radius: 0; border-left: 1px solid rgba(255, 255, 255, 0.2);">
+                                          <i class="bx bx-chevron-down"></i>
+                                        </button>
+                                        <div class="dropdown-menu" style="display: none; position: absolute; right: 0; top: 100%; margin-top: 4px; background: #fff; border: 1px solid var(--border); border-radius: var(--radius-md); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); width: 180px; z-index: 10;">
+                                          <button class="btn-ghost" style="width: 100%; text-align: left; border: none; border-radius: 0; padding: 12px 16px; font-weight: 500;" onclick="addManualActivity()">
+                                            <i class="bx bx-pencil" style="margin-right: 8px"></i> Create Manually
+                                          </button>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+
+                                  <div id="goals-list" style="display: none; flex-direction: column; border-radius: var(--radius-md); overflow: hidden; background: #fff;">
+                                    <!-- Activities get injected here -->
+                                  </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                  </div>
+                </div>
+
+                <button class="btn-ghost" style="margin-top: 16px; margin-bottom: 24px; width: 100%; justify-content: center; border: 1px dashed var(--border); border-radius: var(--radius-md); padding: 12px;" onclick="alert('In a full implementation, this would spawn a new Goal card.')">
+                    <i class='bx bx-plus' style="font-size: 18px;"></i> Add Another Goal
+                </button>
+
+
+              </div>
+
+              <!-- Collaboration Section (Separated) -->
+              <div class="section-card">
+                <h3
+                  style="margin: 0 0 16px 0; font-size: 16px; font-weight: 600"
+                >
+                  Collaboration
+                </h3>
+                <div class="share-grid">
+                  <div class="share-card" onclick="selectShareOption(this)">
+                    <i
+                      class="bx bx-lock"
+                      style="
+                        font-size: 20px;
+                        color: var(--text-muted);
+                        margin-bottom: 12px;
+                      "
+                    ></i>
+                    <h3>Private</h3>
+                    <p>Only visible to you.</p>
+                  </div>
+                  <div
+                    class="share-card active"
+                    onclick="selectShareOption(this)"
+                  >
+                    <i
+                      class="bx bx-user-voice"
+                      style="
+                        font-size: 20px;
+                        color: var(--text-main);
+                        margin-bottom: 12px;
+                      "
+                    ></i>
+                    <h3>Supervisor</h3>
+                    <p>Open for manager review.</p>
+                  </div>
+                  <div class="share-card" onclick="selectShareOption(this)">
+                    <i
+                      class="bx bx-user-pin"
+                      style="
+                        font-size: 20px;
+                        color: var(--text-muted);
+                        margin-bottom: 12px;
+                      "
+                    ></i>
+                    <h3>Mentor</h3>
+                    <p>Share with your designated mentor.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Save Plan Bottom Bar -->
+              <div
+                style="
+                  display: flex;
+                  justify-content: flex-end;
+                  align-items: center;
+                  padding-top: 24px;
+                  border-top: 1px solid var(--border);
+                  margin-top: 16px;
+                "
+              >
+                <button
+                  class="btn-ghost"
+                  style="margin-right: 16px; border: none"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="btn-sharp"
+                  onclick="alert('Plan Saved Successfully!')"
+                >
+                  <i class="bx bx-check"></i> Save Full Plan
+                </button>
+              </div>
+            </div>
+
+            <!-- Side Column: Contextual AI -->
+            <div style="position: relative">
+              <div
+                class="ai-assistant-block sticky"
+                style="top: 80px; position: sticky"
+              >
+                <div
+                  style="
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    margin-bottom: 8px;
+                  "
+                >
+                  <i class="bx bx-bot" style="font-size: 20px"></i>
+                  <h3 style="font-size: 14px; font-weight: 600">
+                    Co-Pilot Analysis
+                  </h3>
+                </div>
+                <p
+                  id="copilot-text"
+                  style="
+                    font-size: 13px;
+                    color: var(--text-muted);
+                    line-height: 1.5;
+                    transition: opacity 0.3s ease;
+                  "
+                >
+                  I can analyze your target role and generate a complete roadmap
+                  of suggested activities.
+                </p>
+
+                <div
+                  id="copilot-actions"
+                  style="
+                    display: flex;
+                    flex-direction: column;
+                    gap: 8px;
+                    margin-top: 8px;
+                    transition: opacity 0.3s ease;
+                  "
+                >
+                  <!-- Actions injected dynamically -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script>
+      // Co-Pilot State Management
+      const initialActions = `
+            <button class="btn-ghost" style="text-align: left; padding: 12px; font-weight: 500; font-size: 12px; line-height: 1.4; white-space: normal; height: auto; border-color: var(--accent); background: #f5f3ff;" onclick="autofillPlan('Senior Product Designer Transition', 'Transition to Senior Product Designer by mastering design systems and leading end-to-end design initiatives.')">
+                "Transition to Senior Product Designer by mastering design systems and leading end-to-end design initiatives."
+            </button>
+            <button class="btn-ghost" style="text-align: left; padding: 12px; font-weight: 500; font-size: 12px; line-height: 1.4; white-space: normal; height: auto;" onclick="autofillPlan('Deepen UX Research Expertise', 'Master advanced user research methods and usability testing protocols.')">
+                "Deepen UX Research Expertise by mastering user research methods and usability testing protocols."
+            </button>
+            <button class="btn-ghost" style="text-align: left; padding: 12px; font-weight: 500; font-size: 12px; line-height: 1.4; white-space: normal; height: auto;" onclick="autofillPlan('Transition to Design Manager', 'Transition to Design Manager by mentoring junior designers and leading product strategy.')">
+                "Transition to Design Manager by mentoring junior designers and leading product strategy."
+            </button>
+        `;
+
+      const refineActions = `
+            <button class="btn-sharp" style="justify-content: center;" onclick="generateRoadmap(this)">
+                <i class='bx bx-sparkles'></i> Generate Outcome
+            </button>
+            <button class="btn-ghost" style="justify-content: center;" onclick="refineOutcome(this)">
+                Refine Outcome
+            </button>
+        `;
+
+      const section2Actions = `
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <button class="btn-ghost" style="padding: 6px 12px; border-radius: 16px; font-size: 12px; height: auto;" onclick="addSkillPill('Design Systems')">
+                Design Systems
+            </button>
+            <button class="btn-ghost" style="padding: 6px 12px; border-radius: 16px; font-size: 12px; height: auto;" onclick="addSkillPill('User Research')">
+                User Research
+            </button>
+            <button class="btn-ghost" style="padding: 6px 12px; border-radius: 16px; font-size: 12px; height: auto;" onclick="addSkillPill('Mentorship')">
+                Mentorship
+            </button>
+        </div>
+      `;
+
+      const copilotMessages = {
+        start:
+          "Based on your profile as a UI Designer, I suggest focusing on these plans:",
+        getGoalSet: (title) =>
+          `I see you're targeting '<b>${title}</b>'. Let me draft an Expected Outcome for that role.`,
+        section2:
+          "Not sure what skill to target yet? Just click Generate and I'll suggest a highly relevant activity based on your Expected Outcome!",
+        activityAdded:
+          "Great start! You have an activity mapped out. Consider adding more to balance your development.",
+        readyToSave:
+          "Your plan looks solid. Don't forget to set your collaboration preferences before saving.",
+      };
+
+      let currentSection = "section-1";
+
+      // Tag Input & Dropdown Logic
+      const availableSkills = [
+        "Design Systems",
+        "User Research",
+        "Prototyping",
+        "Interaction Design",
+        "Design Strategy",
+        "UI/UX Design",
+        "Figma Mastery",
+        "Accessibility (a11y)",
+        "Information Architecture",
+        "Product Strategy",
+        "Mentorship",
+      ];
+
+      function populateSkillDropdown(filter = "") {
+        const dropdown = document.getElementById("skill-dropdown");
+        if (!dropdown) return;
+        dropdown.innerHTML = "";
+
+        const filtered = availableSkills.filter((s) =>
+          s.toLowerCase().includes(filter.toLowerCase()),
+        );
+
+        if (filtered.length === 0) {
+          const item = document.createElement("div");
+          item.style.cssText =
+            "padding: 10px 16px; font-size: 13px; cursor: pointer; transition: background 0.2s; color: var(--accent); font-weight: 500;";
+          item.innerHTML = `Click or press Enter to add "${filter}"`;
+          item.onmouseover = () => (item.style.background = "#f9fafb");
+          item.onmouseout = () => (item.style.background = "transparent");
+          item.onclick = (e) => {
+            e.stopPropagation();
+            addSkillPill(filter);
+            document.getElementById("skill-input").value = "";
+            dropdown.style.display = "none";
+          };
+          dropdown.appendChild(item);
+          return;
+        }
+
+        filtered.forEach((skill) => {
+          const item = document.createElement("div");
+          item.style.cssText =
+            "padding: 10px 16px; font-size: 13px; cursor: pointer; transition: background 0.2s; color: var(--text-main);";
+          item.textContent = skill;
+          item.onmouseover = () => (item.style.background = "#f9fafb");
+          item.onmouseout = () => (item.style.background = "transparent");
+          item.onclick = (e) => {
+            e.stopPropagation();
+            const skillTags = document.getElementById("skill-tags");
+
+            const tag = document.createElement("div");
+            tag.style.cssText =
+              "background: #eef2ff; color: var(--accent); padding: 4px 10px; border-radius: 16px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 6px; animation: slideIn 0.2s ease-out;";
+            tag.innerHTML = `
+                        ${skill}
+                        <i class='bx bx-x' style="cursor: pointer; font-size: 14px;" onclick="this.parentElement.remove(); updateGenerateButtonState()"></i>
+                    `;
+            skillTags.appendChild(tag);
+
+            document.getElementById("skill-input").value = "";
+            populateSkillDropdown("");
+            dropdown.style.display = "none";
+            updateGenerateButtonState();
+          };
+          dropdown.appendChild(item);
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const skillInput = document.getElementById("skill-input");
+        const skillTags = document.getElementById("skill-tags");
+
+        skillInput.addEventListener("focus", () => {
+          document.getElementById("skill-dropdown").style.display = "block";
+          populateSkillDropdown(skillInput.value);
+        });
+
+        skillInput.addEventListener("input", (e) => {
+          document.getElementById("skill-dropdown").style.display = "block";
+          populateSkillDropdown(e.target.value);
+          updateGenerateButtonState();
+        });
+
+        skillInput.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === ",") {
+            e.preventDefault();
+            const val = skillInput.value.trim().replace(/,$/, "");
+            if (val) {
+              const tag = document.createElement("div");
+              tag.style.cssText =
+                "background: #eef2ff; color: var(--accent); padding: 4px 10px; border-radius: 16px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 6px; animation: slideIn 0.2s ease-out;";
+              tag.innerHTML = `
+                            ${val}
+                            <i class='bx bx-x' style="cursor: pointer; font-size: 14px;" onclick="this.parentElement.remove(); updateGenerateButtonState()"></i>
+                        `;
+              skillTags.appendChild(tag);
+              skillInput.value = "";
+              document.getElementById("skill-dropdown").style.display = "none";
+              updateGenerateButtonState();
+            }
+          }
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (!e.target.closest(".dropdown-container")) {
+          document
+            .querySelectorAll(".dropdown-menu")
+            .forEach((menu) => (menu.style.display = "none"));
+        }
+        if (
+          !e.target.closest("#skill-dropdown") &&
+          !e.target.closest("#skill-input") &&
+          !e.target.closest('div[onclick*="focus"]')
+        ) {
+          const dropdown = document.getElementById("skill-dropdown");
+          if (dropdown) dropdown.style.display = "none";
+        }
+      });
+
+      function updateGenerateButtonState() {
+        const btn = document.getElementById("generate-btn");
+        const isEmpty = getSkillsString().length === 0;
+
+        if (btn) {
+          if (isEmpty) {
+            btn.innerHTML = '<i class="bx bx-bot"></i> Auto-Generate Activity';
+            btn.classList.add("btn-pulse");
+          } else {
+            btn.innerHTML = '<i class="bx bx-bot"></i> Generate for Skill';
+            btn.classList.remove("btn-pulse");
+          }
+        }
+      }
+
+      function getSkillsString() {
+        const tags = Array.from(
+          document.querySelectorAll("#skill-tags div"),
+        ).map((t) => t.textContent.trim());
+        const inputVal = document.getElementById("skill-input").value.trim();
+        if (inputVal) tags.push(inputVal);
+        return tags.join(", ");
+      }
+
+      function addSkillPill(skill) {
+        const skillTags = document.getElementById("skill-tags");
+        const tag = document.createElement("div");
+        tag.style.cssText =
+          "background: #eef2ff; color: var(--accent); padding: 4px 10px; border-radius: 16px; font-size: 12px; font-weight: 600; display: flex; align-items: center; gap: 6px; animation: slideIn 0.2s ease-out;";
+        tag.innerHTML = `
+            ${skill}
+            <i class='bx bx-x' style="cursor: pointer; font-size: 14px;" onclick="this.parentElement.remove(); updateGenerateButtonState()"></i>
+        `;
+        skillTags.appendChild(tag);
+        updateGenerateButtonState();
+      }
+
+      function updateCopilot(messageHtml, customActionsHtml = "") {
+        const cpText = document.getElementById("copilot-text");
+        const cpActions = document.getElementById("copilot-actions");
+
+        cpText.style.opacity = "0";
+        cpActions.style.opacity = "0";
+        setTimeout(() => {
+          cpText.innerHTML = messageHtml;
+          cpActions.innerHTML = customActionsHtml;
+          cpText.style.opacity = "1";
+          cpActions.style.opacity = "1";
+        }, 300);
+      }
+
+      // Scroll Observer for Contextual Co-Pilot
+      const observerOptions = {
+        root: null,
+        rootMargin: "-40% 0px -40% 0px", // Creates a narrow trigger zone in the middle of the screen
+        threshold: 0,
+      };
+
+      let copilotTimeout;
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            clearTimeout(copilotTimeout);
+            copilotTimeout = setTimeout(() => {
+              currentSection = entry.target.id;
+              if (currentSection === "section-1") {
+                // Show default recommendations when in section 1 and empty
+                const currentTitle = document
+                  .getElementById("plan-title")
+                  .value.trim();
+                if (!currentTitle) {
+                  updateCopilot(copilotMessages.start, initialActions);
+                } else {
+                  updateCopilot(
+                    copilotMessages.getGoalSet(currentTitle),
+                    refineActions,
+                  );
+                }
+              }
+            }, 300);
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll(".section-card").forEach((section) => {
+        observer.observe(section);
+      });
+
+      // Listen for Goal Title changes to trigger Co-Pilot
+      document
+        .getElementById("plan-title")
+        .addEventListener("blur", function (e) {
+          const title = e.target.value.trim();
+          if (title !== "") {
+            updateCopilot(copilotMessages.getGoalSet(title), refineActions);
+          } else {
+            updateCopilot(copilotMessages.start, initialActions);
+          }
+        });
+
+      function toggleDropdown(btn) {
+        const menu = btn.nextElementSibling;
+        const isVisible = menu.style.display === "block";
+        document
+          .querySelectorAll(".dropdown-menu")
+          .forEach((m) => (m.style.display = "none"));
+        if (!isVisible) {
+          menu.style.display = "block";
+        }
+      }
+
+      document.addEventListener("click", (e) => {
+        // Already handled above
+      });
+
+      function createActivityCardHTML(skill, name, mode, desc, startDate = "") {
+        return `
+                <div class="activity-card" style="padding: 0; overflow: hidden; animation: slideIn 0.3s ease-out;">
+                    
+                    <!-- Accordion Header -->
+                    <div style="background: transparent; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; cursor: pointer; transition: background 0.2s;"
+                         onmouseover="this.style.background='#f9fafb'"
+                         onmouseout="this.style.background='transparent'"
+                         onclick="const body = this.nextElementSibling; const icon = this.querySelector('.chevron-icon'); if (body.style.gridTemplateRows === '1fr') { body.style.gridTemplateRows = '0fr'; icon.style.transform = 'rotate(0deg)'; } else { body.style.gridTemplateRows = '1fr'; icon.style.transform = 'rotate(90deg)'; }">
+                        <div style="display: flex; flex-direction: column; gap: 4px;">
+                            <span style="font-weight: 600; font-size: 14px; color: var(--text-main);">${name || "New Activity"}</span>
+                            <span style="font-size: 12px; color: var(--text-muted); font-weight: 500;">${mode ? mode : "Draft"}</span>
+                        </div>
+                        <div style="display: flex; gap: 12px; align-items: center;">
+                            <button class="btn-ghost" style="padding: 4px; border: none; color: var(--text-muted); min-width: auto; height: auto;" onclick="event.stopPropagation(); this.closest('.activity-card').remove()" title="Remove Activity">
+                                <i class='bx bx-trash' style="font-size: 18px;"></i>
+                            </button>
+                            <i class='bx bx-chevron-right chevron-icon' style="font-size: 20px; color: var(--text-muted); transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1); transform: rotate(90deg);"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Accordion Body (Animated using Grid) -->
+                    <div style="display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.3s cubic-bezier(0.25, 1, 0.5, 1);">
+                        <div style="overflow: hidden;">
+                            <div style="padding: 24px; display: flex; flex-direction: column; gap: 20px;">
+                                <div>
+                                    <label class="label-clean" style="font-size: 12px; margin-bottom: 8px;">Activity Name</label>
+                                    <input type="text" class="input-clean" value="${name}" placeholder="e.g. Advanced Communication principles certification" style="padding: 10px 12px; font-weight: 500; font-size: 13px; background: #f9fafb; border: 1px solid var(--border);" oninput="this.closest('.activity-card').querySelector('span').textContent = this.value || 'New Activity'">
+                                </div>
+                                
+                                <div>
+                                    <label class="label-clean" style="font-size: 12px; margin-bottom: 8px;">What is the Development Mode of your Activity?</label>
+                                    <select class="input-clean" style="padding: 10px 12px; font-size: 13px; font-weight: 500; color: var(--text-main); background: #f9fafb; border: 1px solid var(--border);" onchange="this.closest('.activity-card').querySelectorAll('span')[1].textContent = this.value">
+                                        <option value="" ${!mode ? "selected" : ""} disabled>Select mode...</option>
+                                        <option value="Course" ${mode === "Course" ? "selected" : ""}>Course</option>
+                                        <option value="Project" ${mode === "Project" ? "selected" : ""}>Project</option>
+                                        <option value="Mentorship" ${mode === "Mentorship" || mode === "Internal" ? "selected" : ""}>Mentorship</option>
+                                    </select>
+                                </div>
+
+                                <div>
+                                    <label class="label-clean" style="font-size: 12px; margin-bottom: 8px;">What are the Activity details & Timeline?</label>
+                                    <textarea class="input-clean" rows="3" placeholder="Provide details about what you will do..." style="padding: 10px 12px; font-size: 13px; resize: vertical; background: #f9fafb; border: 1px solid var(--border);">${desc}</textarea>
+                                </div>
+
+                                <div style="display: flex; gap: 20px;">
+                                    <div style="flex: 1;">
+                                        <label class="label-clean" style="font-size: 12px; margin-bottom: 8px;">Start Date</label>
+                                        <input type="date" class="input-clean" value="${startDate}" style="padding: 10px 12px; font-size: 13px; background: #f9fafb; border: 1px solid var(--border);">
+                                    </div>
+                                    <div style="flex: 1;">
+                                        <label class="label-clean" style="font-size: 12px; margin-bottom: 8px;">End Date</label>
+                                        <input type="date" class="input-clean" style="padding: 10px 12px; font-size: 13px; background: #f9fafb; border: 1px solid var(--border);">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+      }
+
+      function addSuggestedActivity(skill, mode, name, desc) {
+        const list = document.getElementById("goals-list");
+        list.style.display = "flex";
+        const activityHTML = createActivityCardHTML(
+          skill,
+          name,
+          mode,
+          desc,
+          "2026-05-23",
+        );
+        list.insertAdjacentHTML("afterbegin", activityHTML);
+        updateCopilot(copilotMessages.activityAdded);
+      }
+
+      function addManualActivity() {
+        const list = document.getElementById("goals-list");
+        list.style.display = "flex";
+
+        const skill = getSkillsString() || "New Skill";
+
+        document
+          .querySelectorAll(".dropdown-menu")
+          .forEach((menu) => (menu.style.display = "none"));
+
+        const manualHTML = createActivityCardHTML(skill, "", "", "", "");
+        list.insertAdjacentHTML("afterbegin", manualHTML);
+
+        // Clear input after manual creation
+        document.getElementById("skill-input").value = "";
+        document.getElementById("skill-tags").innerHTML = "";
+      }
+
+      function autofillPlan(title, outcome) {
+        const titleInput = document.getElementById("plan-title");
+        const outcomeInput = document.getElementById("outcome-textarea");
+
+        titleInput.value = title;
+        outcomeInput.value = outcome;
+
+        // Flash effect to show it was auto-filled
+        titleInput.style.backgroundColor = "#eef2ff";
+        outcomeInput.style.backgroundColor = "#eef2ff";
+        setTimeout(() => {
+          titleInput.style.backgroundColor = "#f3f4f6";
+          outcomeInput.style.backgroundColor = "#f3f4f6";
+        }, 400);
+
+        // Trigger copilot reaction
+        updateCopilot(copilotMessages.getGoalSet(title), refineActions);
+      }
+
+      function refineOutcome(btn) {
+        btn.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> Refining...";
+        setTimeout(() => {
+          document.getElementById("outcome-textarea").value =
+            "To master design systems and end-to-end user research by Q4, enabling a transition to Senior Product Designer.";
+          btn.innerHTML = "<i class='bx bx-check'></i> Refined";
+        }, 800);
+      }
+
+      function generateFromSkill(btn) {
+        let skill = getSkillsString();
+
+        if (!skill) {
+          skill = "Design Strategy"; // Auto-inferred
+        }
+
+        const originalText = btn.innerHTML;
+        btn.innerHTML =
+          "<i class='bx bx-loader-alt bx-spin'></i> Generating...";
+        btn.disabled = true;
+
+        setTimeout(() => {
+          const list = document.getElementById("goals-list");
+          list.style.display = "flex";
+
+          // Simulate AI generated content based on the combined skills
+          let generatedName = `${skill} Foundation Course`;
+          let generatedMode = "Course";
+          let generatedDesc = `Complete a comprehensive certification covering ${skill} to close current knowledge gaps.`;
+
+          if (
+            skill.toLowerCase().includes("research") ||
+            skill.toLowerCase().includes("strategy") ||
+            skill.toLowerCase().includes("leadership")
+          ) {
+            generatedName = `Lead Cross-Functional Initiative`;
+            generatedMode = "Project";
+            generatedDesc = `Act as the lead designer for an upcoming initiative to practice ${skill} in a live environment.`;
+          }
+
+          const aiHTML = createActivityCardHTML(
+            skill,
+            generatedName,
+            generatedMode,
+            generatedDesc,
+            "2026-05-23",
+          );
+          list.insertAdjacentHTML("afterbegin", aiHTML);
+
+          // Reset button and inputs
+          btn.innerHTML = originalText;
+          btn.disabled = false;
+          document.getElementById("skill-input").value = "";
+          document.getElementById("skill-tags").innerHTML = "";
+
+          updateCopilot(copilotMessages.activityAdded);
+        }, 1200);
+      }
+
+      function generateRoadmap(btn) {
+        btn.innerHTML =
+          "<i class='bx bx-loader-alt bx-spin'></i> Analyzing Role...";
+        setTimeout(() => {
+          const list = document.getElementById("goals-list");
+          list.style.display = "flex";
+
+          const roadmapHTML = createActivityCardHTML(
+            "Design Systems",
+            "Advanced Design Systems Certification",
+            "Course",
+            "Master scalable component architecture and design tokens to prepare for Senior-level design decisions.",
+            "2026-05-23",
+          );
+          list.insertAdjacentHTML("afterbegin", roadmapHTML);
+          btn.innerHTML = "<i class='bx bx-check'></i> Outcome Generated";
+          updateCopilot(copilotMessages.readyToSave, false);
+        }, 1500);
+      }
+
+      function selectShareOption(element) {
+        document.querySelectorAll(".share-card").forEach((card) => {
+          card.classList.remove("active");
+          card.querySelector("i").style.color = "var(--text-muted)";
+        });
+        element.classList.add("active");
+        element.querySelector("i").style.color = "var(--text-main)";
+
+        // Final Copilot nudge
+        updateCopilot(
+          "Great! I've marked this plan to be shared with your " +
+            element.querySelector("h3").innerText.toLowerCase() +
+            ". Click 'Save Plan' to finalize.",
+          false,
+        );
+      }
+    </script>
+  </body>
+</html>

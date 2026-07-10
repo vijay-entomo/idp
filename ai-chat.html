@@ -1,0 +1,429 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>entomo - Development Plans</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Using Phosphor Icons or similar for quick icons, we can use a CDN for an icon set like Boxicons or FontAwesome -->
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-top">
+        <!-- Space for logo if needed, but in screenshot logo is in the header -->
+      </div>
+
+      <ul class="nav-links">
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-home-alt"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-bar-chart-alt-2"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-share-alt"></i></a>
+        </li>
+        <li class="nav-item active">
+          <a href="#" class="nav-link"><i class="bx bx-shield"></i></a>
+          <!-- Represents the active tab -->
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-bulb"></i></a>
+        </li>
+        <li class="nav-item">
+          <a href="#" class="nav-link"><i class="bx bx-group"></i></a>
+        </li>
+      </ul>
+
+      <div class="sidebar-bottom">
+        <a href="#" class="nav-link"><i class="bx bx-map-alt"></i></a>
+        <a href="#" class="nav-link"><i class="bx bx-water"></i></a>
+      </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+      <!-- HEADER -->
+      <header class="header">
+        <div class="header-left">
+          <!-- entomo logo -->
+          <div
+            class="logo"
+            style="cursor: pointer"
+            onclick="window.location.href = 'index.html'"
+          >
+            <div class="logo-icon">
+              <span class="red-box"></span>
+              <span class="green-box"></span>
+              <span class="blue-box"></span>
+            </div>
+            <span class="logo-text">entomo</span>
+          </div>
+        </div>
+
+        <div class="header-right">
+          <button class="icon-btn">
+            <i class="bx bx-text"></i>
+          </button>
+          <button class="icon-btn">
+            <i class="bx bx-bell"></i>
+            <span class="badge"></span>
+          </button>
+
+          <div class="user-profile">
+            <div class="avatar"></div>
+            <span class="username">Alex</span>
+            <i class="bx bx-chevron-down text-blue"></i>
+          </div>
+        </div>
+      </header>
+
+      <!-- MAIN CONTENT AREA -->
+      <main class="content-area">
+        <div
+          id="step-ai-chat"
+          class="wizard-container"
+          style="display: flex; flex-direction: column"
+        >
+          <div class="ai-chat-header" style="margin-bottom: 24px">
+            <a href="javascript:history.back()" class="back-link">
+              <i class="bx bx-left-arrow-alt"></i> Back
+            </a>
+          </div>
+          <div
+            class="ai-chat-layout"
+            style="display: flex; gap: 40px; flex: 1; min-height: 0"
+          >
+            <div
+              class="chat-main"
+              style="border: none; background: transparent; overflow: visible"
+            >
+              <h1 class="serif-title wizard-title">Create with AI Coach</h1>
+              <p class="wizard-subtitle">
+                Have an intelligent conversation to identify your skill gaps and
+                get tailored recommendations.
+              </p>
+
+              <div
+                style="
+                  border: 1px solid #e5e7eb;
+                  border-radius: 12px;
+                  background: #fff;
+                  overflow: hidden;
+                  display: flex;
+                  flex-direction: column;
+                  flex: 1;
+                "
+              >
+                <!-- Messages Area -->
+                <div class="chat-messages">
+                  <!-- AI Message -->
+                  <div class="message ai-message">
+                    <div class="message-avatar">
+                      <img
+                        src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=e5e7eb"
+                        alt="AI Agent"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          border-radius: 50%;
+                          object-fit: cover;
+                        "
+                      />
+                    </div>
+                    <div class="message-content">
+                      <p>
+                        Hello Alex! I'm your Career Coach. I'll help you build
+                        an IDP that fits your ambitions. To start, what kind of
+                        plan are we building today? You can choose a
+                        <strong>skill growth plan</strong>,
+                        <strong>grow beyond your role</strong>, or
+                        <strong>improve a performance goal</strong>.
+                      </p>
+                      <span class="message-time">10:02 AM</span>
+                    </div>
+                  </div>
+
+                  <!-- User Message -->
+                  <div class="message user-message">
+                    <div class="message-content">
+                      <p>
+                        Let's create a skill growth plan. I'm currently a Senior
+                        Product Engineer, but I'm looking to move into a Staff
+                        Engineering role.
+                      </p>
+                      <span class="message-time">10:03 AM</span>
+                    </div>
+                    <div class="message-avatar">
+                      <img
+                        src="https://ui-avatars.com/api/?name=Alex&background=e5e7eb&color=374151"
+                        alt="Alex"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- AI Message -->
+                  <div class="message ai-message">
+                    <div class="message-avatar">
+                      <img
+                        src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=e5e7eb"
+                        alt="AI Agent"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          border-radius: 50%;
+                          object-fit: cover;
+                        "
+                      />
+                    </div>
+                    <div class="message-content">
+                      <p>
+                        That's a great transition. To reach Staff level, we'll
+                        need to focus on cross-functional influence and
+                        architectural breadth. What specific skills do you feel
+                        you need to develop most to be ready for that?
+                      </p>
+                      <span class="message-time">10:03 AM</span>
+                    </div>
+                  </div>
+
+                  <!-- User Message -->
+                  <div class="message user-message">
+                    <div class="message-content">
+                      <p>
+                        I definitely need to improve my architectural design
+                        skills, specifically system design. And I want to work
+                        on my cross-team communication.
+                      </p>
+                      <span class="message-time">10:04 AM</span>
+                    </div>
+                    <div class="message-avatar">
+                      <img
+                        src="https://ui-avatars.com/api/?name=Alex&background=e5e7eb&color=374151"
+                        alt="Alex"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- AI Message -->
+                  <div class="message ai-message">
+                    <div class="message-avatar">
+                      <img
+                        src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=e5e7eb"
+                        alt="AI Agent"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          border-radius: 50%;
+                          object-fit: cover;
+                        "
+                      />
+                    </div>
+                    <div class="message-content">
+                      <p>
+                        Excellent. I've noted "System Architecture" and
+                        "Advanced Communication" as your core target skills. I
+                        will map out specific courses and projects for these. To
+                        scope the timeline, when would you like to achieve this
+                        goal by?
+                      </p>
+                      <span class="message-time">10:04 AM</span>
+                    </div>
+                  </div>
+
+                  <!-- User Message -->
+                  <div class="message user-message">
+                    <div class="message-content">
+                      <p>Let's aim for December 2026.</p>
+                      <span class="message-time">10:05 AM</span>
+                    </div>
+                    <div class="message-avatar">
+                      <img
+                        src="https://ui-avatars.com/api/?name=Alex&background=e5e7eb&color=374151"
+                        alt="Alex"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- AI Message -->
+                  <div class="message ai-message">
+                    <div class="message-avatar">
+                      <img
+                        src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=e5e7eb"
+                        alt="AI Agent"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          border-radius: 50%;
+                          object-fit: cover;
+                        "
+                      />
+                    </div>
+                    <div class="message-content">
+                      <p>
+                        Got it. Finally, who should be able to view and
+                        collaborate on this plan once it's created? You can keep
+                        it private, or share it with your Supervisor or Mentor.
+                      </p>
+                      <span class="message-time">10:05 AM</span>
+                    </div>
+                  </div>
+
+                  <!-- User Message -->
+                  <div class="message user-message">
+                    <div class="message-content">
+                      <p>Please share it with my Supervisor.</p>
+                      <span class="message-time">10:06 AM</span>
+                    </div>
+                    <div class="message-avatar">
+                      <img
+                        src="https://ui-avatars.com/api/?name=Alex&background=e5e7eb&color=374151"
+                        alt="Alex"
+                      />
+                    </div>
+                  </div>
+
+                  <!-- AI Message -->
+                  <div class="message ai-message">
+                    <div class="message-avatar">
+                      <img
+                        src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=e5e7eb"
+                        alt="AI Agent"
+                        style="
+                          width: 100%;
+                          height: 100%;
+                          border-radius: 50%;
+                          object-fit: cover;
+                        "
+                      />
+                    </div>
+                    <div class="message-content">
+                      <p>
+                        Perfect. I have all the information I need! I have
+                        generated your "Staff Engineering Transition" Individual
+                        Development Plan, complete with tailored activities and
+                        a timeline.
+                      </p>
+                      <div style="margin-top: 12px">
+                        <button
+                          class="btn btn-primary"
+                          onclick="alert('Viewing generated plan!')"
+                          style="
+                            width: auto;
+                            padding: 8px 16px;
+                            font-size: 13px;
+                          "
+                        >
+                          View Your Plan <i class="bx bx-right-arrow-alt"></i>
+                        </button>
+                      </div>
+                      <span class="message-time">10:06 AM</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="chat-input-wrapper">
+                  <input
+                    type="text"
+                    class="chat-input"
+                    placeholder="Type your response..."
+                  />
+                  <div class="chat-input-actions">
+                    <i class="bx bx-paperclip"></i>
+                    <i class="bx bx-smile"></i>
+                    <button class="send-btn"><i class="bx bx-send"></i></button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Sidebar -->
+            <div class="chat-sidebar" style="padding-top: 104px">
+              <!-- Coach Tip Card -->
+              <div class="tip-card">
+                <div class="tip-header">
+                  <i class="bx bx-bulb"></i> <span>Coach Tip</span>
+                </div>
+                <p>
+                  Staff engineers are expected to lead by "glue" work. Think
+                  about how you've handled cross-team friction lately.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: CREATE MANUALLY (Basic Information) -->
+      </main>
+    </div>
+
+    <script>
+      function generateGoals(btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML =
+          "<i class='bx bx-loader-alt bx-spin'></i> Generating...";
+        setTimeout(() => {
+          document.getElementById("goals-empty-state").style.display = "none";
+          document.getElementById("goals-list").style.display = "block";
+          btn.innerHTML = originalText;
+        }, 1000);
+      }
+
+      function suggestActivities(btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> Analyzing...";
+        setTimeout(() => {
+          document.getElementById("activities-empty-state").style.display =
+            "none";
+          document.getElementById("activities-list").style.display = "block";
+          btn.innerHTML = originalText;
+        }, 1200);
+      }
+
+      function generateTimeline(btn) {
+        const originalText = btn.innerHTML;
+        btn.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> Mapping...";
+        setTimeout(() => {
+          document.getElementById("roadmap-empty-state").style.display = "none";
+          document.getElementById("roadmap-list").style.display = "block";
+          btn.innerHTML = originalText;
+        }, 1200);
+      }
+
+      function addBlankGoal() {
+        document.getElementById("goals-empty-state").style.display = "none";
+        const goalsList = document.getElementById("goals-list");
+        goalsList.style.display = "block";
+
+        const newGoalHtml = `
+                <div class="goal-card" style="border-color: #5d5fef;">
+                    <div class="goal-header">
+                        <div class="goal-title-wrapper">
+                            <h3 contenteditable="true" style="border-bottom: 1px dashed #ccc; min-width: 200px; outline: none;">New Goal Title...</h3>
+                            <span class="badge badge-medium">NEW</span>
+                        </div>
+                        <button class="btn-icon-only"><i class='bx bx-pencil'></i></button>
+                    </div>
+                    <div class="goal-criteria">
+                        <span class="criteria-label">SUCCESS CRITERIA</span>
+                        <p contenteditable="true" style="border-bottom: 1px dashed #ccc; outline: none;">Define how you will measure success...</p>
+                    </div>
+                </div>
+            `;
+        goalsList.insertAdjacentHTML("beforeend", newGoalHtml);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entomo - Development Plans</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Using Phosphor Icons or similar for quick icons, we can use a CDN for an icon set like Boxicons or FontAwesome -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <div class="sidebar-top">
+            <!-- Space for logo if needed, but in screenshot logo is in the header -->
+        </div>
+        
+        <ul class="nav-links">
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='bx bx-home-alt'></i></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='bx bx-bar-chart-alt-2'></i></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='bx bx-share-alt'></i></a>
+            </li>
+            <li class="nav-item active">
+                <a href="#" class="nav-link"><i class='bx bx-shield'></i></a> <!-- Represents the active tab -->
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='bx bx-bulb'></i></a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link"><i class='bx bx-group'></i></a>
+            </li>
+        </ul>
+
+        <div class="sidebar-bottom">
+            <a href="#" class="nav-link"><i class='bx bx-map-alt'></i></a>
+            <a href="#" class="nav-link"><i class='bx bx-water'></i></a>
+        </div>
+    </aside>
+
+    <!-- MAIN WRAPPER -->
+    <div class="main-wrapper">
+        <!-- HEADER -->
+        <header class="header">
+            <div class="header-left">
+                <!-- entomo logo -->
+                <div class="logo" style="cursor: pointer;" onclick="window.location.href='index.html'">
+                    <div class="logo-icon">
+                        <span class="red-box"></span>
+                        <span class="green-box"></span>
+                        <span class="blue-box"></span>
+                    </div>
+                    <span class="logo-text">entomo</span>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <button class="icon-btn">
+                    <i class='bx bx-text'></i>
+                </button>
+                <button class="icon-btn">
+                    <i class='bx bx-bell'></i>
+                    <span class="badge"></span>
+                </button>
+                
+                <div class="user-profile">
+                    <div class="avatar"></div>
+                    <span class="username">Alex</span>
+                    <i class='bx bx-chevron-down text-blue'></i>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="content-area">
+<div id="step-goals" class="wizard-container" style="display: block;">
+                
+<div class="wizard-content">
+                    <div class="form-area">
+                        <div class="stepper" style="padding: 0; margin-bottom: 32px;">
+                            <div class="step completed"><div class="step-circle"><i class='bx bx-check'></i></div></div>
+                            <div class="step-line active-line"></div>
+                            <div class="step active"><div class="step-circle">2</div></div>
+                            <div class="step-line"></div>
+                            <div class="step"><div class="step-circle">3</div></div>
+                        </div>
+                        <h1 class="serif-title wizard-title">Plan your development activities</h1>
+                        <p class="wizard-subtitle">Create activities (courses, projects, etc.) and assign a target skill to each one.</p>
+
+                        <!-- Goal Cards -->
+                        <div id="goals-empty-state" style="text-align: center; padding: 64px 24px; border: 2px dashed #e5e7eb; border-radius: 12px; margin-bottom: 24px;">
+                            <i class='bx bx-list-plus' style="font-size: 40px; color: #9ca3af; margin-bottom: 16px;"></i>
+                            <h3 style="color: #374151; font-size: 18px; margin-bottom: 8px;">No activities defined yet</h3>
+                            <p style="color: #6b7280; font-size: 14px;">Use the AI Assist to generate tailored activities or add them manually.</p>
+                        </div>
+                        <div id="goals-list" style="display: none; display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+                            <!-- Dynamically added activities will appear here -->
+                        </div> <!-- end goals-list -->
+                        <button class="btn-dashed w-100" onclick="addBlankGoal()">
+                            <i class='bx bx-plus'></i> Add Activity
+                        </button>
+
+                        <div class="form-actions">
+                            <button class="btn btn-outline" onclick="window.location.href='step1-basic.html'">Back</button>
+                            <button class="btn btn-primary btn-icon" onclick="window.location.href='step3-sharing.html'">
+                                Next: Sharing <i class='bx bx-right-arrow-alt'></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="assist-sidebar">
+                        <div class="assist-card">
+                            <div class="assist-header">
+                                <div class="ai-avatar-icon" style="overflow: hidden;"><img src="https://api.dicebear.com/7.x/notionists/svg?seed=Felix&backgroundColor=e5e7eb" alt="AI Agent" style="width:100%;height:100%;object-fit:cover;"></div>
+                                <h3>AI Assist</h3>
+                            </div>
+                            <p class="assist-desc">Based on your goal from Step 1, I can generate the most effective activities (courses, projects, mentoring) to help you get there.</p>
+                            <button class="btn btn-outline-purple w-100" style="margin-bottom: 24px;" onclick="suggestActivities(this)">Suggest Activities</button>
+                            
+                            <div class="assist-examples">
+                                <span class="examples-label">RECOMMENDED FOR YOUR GOAL</span>
+                                <p style="font-size: 13px; color: #4b5563; margin-bottom: 12px; line-height: 1.5;">To hit your "Staff Engineer Transition" goal, I suggest adding these activities:</p>
+                                <div class="example-box" onclick="suggestActivities(this)" style="cursor: pointer;">
+                                    "Lead the Q3 Microservices Migration (Project)"
+                                </div>
+                                <div class="example-box" onclick="suggestActivities(this)" style="cursor: pointer;">
+                                    "Complete Advanced System Design Certification (Course)"
+                                </div>
+                                <div class="example-box" onclick="suggestActivities(this)" style="cursor: pointer;">
+                                    "Mentor 2 junior engineers on code quality (Mentorship)"
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- STEP 3: ACTIVITIES -->
+            
+</main>
+    </div>
+
+    <script>
+        function suggestActivities(btn) {
+            const originalText = btn.innerHTML;
+            btn.innerHTML = "<i class='bx bx-loader-alt bx-spin'></i> Analyzing...";
+            btn.style.pointerEvents = "none";
+            
+            setTimeout(() => {
+                document.getElementById('goals-empty-state').style.display = 'none';
+                const goalsList = document.getElementById('goals-list');
+                goalsList.style.display = 'flex';
+                
+                // Add a pre-filled AI generated activity
+                const aiGoalHtml = `
+                    <div class="goal-card" style="border: 1px solid #5d5fef; padding: 24px; animation: slideIn 0.3s ease-out;">
+                        <div class="goal-header" style="border-bottom: 1px solid #e5e7eb; padding-bottom: 16px; margin-bottom: 16px;">
+                            <div class="goal-title-wrapper">
+                                <h3 style="font-size: 16px;">Suggested AI Activity</h3>
+                            </div>
+                            <button class="btn-icon-only" onclick="this.closest('.goal-card').remove()"><i class='bx bx-trash' style="color: #ef4444;"></i></button>
+                        </div>
+                        
+                        <div class="activity-form">
+                            <div class="form-group" style="margin-bottom: 16px;">
+                                <label class="form-label">Select Skills <span style="color: #ef4444;">*</span></label>
+                                <div class="multi-select-wrapper" style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px; background: #fff;">
+                                    <div class="selected-pills" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+                                        <span class="tag tag-purple" style="display: flex; align-items: center; gap: 4px;">Data Analysis <i class='bx bx-x' style="cursor: pointer; font-size: 16px;"></i></span>
+                                    </div>
+                                    <div class="input-icon-wrapper" style="position: relative;">
+                                        <input type="text" class="form-control" placeholder="Search skills..." style="border: none; padding-left: 36px; box-shadow: none;">
+                                        <i class='bx bx-search input-icon' style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 16px;">
+                                <label class="form-label">Activity Name</label>
+                                <input type="text" class="form-control" value="Advanced Data Viz for PMs (Coursera)">
+                            </div>
+                            <div class="form-group" style="margin-bottom: 16px;">
+                                <label class="form-label">What is the Development Mode of your Activity?</label>
+                                <div class="select-wrapper">
+                                    <select class="form-control">
+                                        <option>Course / Training</option>
+                                        <option>On-the-job Project</option>
+                                        <option>Mentoring / Coaching</option>
+                                        <option>Self-study</option>
+                                    </select>
+                                    <i class='bx bx-chevron-down select-icon'></i>
+                                </div>
+                            </div>
+                            <div class="form-group" style="margin-bottom: 16px;">
+                                <label class="form-label">What are the Activity details & Timeline?</label>
+                                <textarea class="form-control" rows="3">A comprehensive 4-week course to master analytical storytelling and dashboard creation.</textarea>
+                            </div>
+                            <div style="display: flex; gap: 16px; margin-bottom: 24px;">
+                                <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                                    <label class="form-label">Start Date</label>
+                                    <div class="input-icon-wrapper">
+                                        <input type="date" class="form-control" value="2026-06-01">
+                                    </div>
+                                </div>
+                                <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                                    <label class="form-label">End Date</label>
+                                    <div class="input-icon-wrapper">
+                                        <input type="date" class="form-control" value="2026-06-30">
+                                    </div>
+                                </div>
+                            </div>
+                            <div style="text-align: right;">
+                                <button class="btn btn-primary" onclick="this.innerHTML = 'Saved'; this.style.backgroundColor = '#10b981'; this.style.borderColor = '#10b981';">Save Activity</button>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                goalsList.insertAdjacentHTML('beforeend', aiGoalHtml);
+                
+                // Success state
+                btn.innerHTML = "<i class='bx bx-check'></i> Suggested!";
+                btn.style.backgroundColor = "#10b981";
+                btn.style.borderColor = "#10b981";
+                btn.style.color = "white";
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.style.pointerEvents = "auto";
+                    btn.style.backgroundColor = "";
+                    btn.style.borderColor = "";
+                    btn.style.color = "";
+                }, 2000);
+            }, 1200);
+        }
+
+        function addBlankGoal() {
+            document.getElementById('goals-empty-state').style.display = 'none';
+            const goalsList = document.getElementById('goals-list');
+            goalsList.style.display = 'block';
+
+            const newGoalHtml = `
+                <div class="goal-card" style="border: 1px solid #5d5fef; padding: 24px;">
+                    <div class="goal-header" style="border-bottom: 1px solid #e5e7eb; padding-bottom: 16px; margin-bottom: 16px;">
+                        <div class="goal-title-wrapper">
+                            <h3 style="font-size: 16px;">Add New Activity</h3>
+                        </div>
+                        <button class="btn-icon-only" onclick="this.closest('.goal-card').remove()"><i class='bx bx-trash' style="color: #ef4444;"></i></button>
+                    </div>
+                    
+                    <div class="activity-form">
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <label class="form-label">Select Skills <span style="color: #ef4444;">*</span></label>
+                            <div class="multi-select-wrapper" style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 8px; background: #fff;">
+                                <div class="selected-pills" style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+                                    <span class="tag tag-purple" style="display: flex; align-items: center; gap: 4px;">Search and add skills...</span>
+                                </div>
+                                <div class="input-icon-wrapper" style="position: relative;">
+                                    <input type="text" class="form-control" placeholder="Search skills..." style="border: none; padding-left: 36px; box-shadow: none;">
+                                    <i class='bx bx-search input-icon' style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: #9ca3af;"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <label class="form-label">Activity Name</label>
+                            <input type="text" class="form-control" placeholder="e.g. Advanced Communication principles certification">
+                        </div>
+                        
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <label class="form-label">What is the Development Mode of your Activity?</label>
+                            <div class="select-wrapper">
+                                <select class="form-control">
+                                    <option value="" disabled selected>Select mode...</option>
+                                    <option>Course / Training</option>
+                                    <option>On-the-job Project</option>
+                                    <option>Mentoring / Coaching</option>
+                                    <option>Self-study</option>
+                                </select>
+                                <i class='bx bx-chevron-down select-icon'></i>
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="margin-bottom: 16px;">
+                            <label class="form-label">What are the Activity details & Timeline?</label>
+                            <textarea class="form-control" rows="3" placeholder="Provide details about what you will do..."></textarea>
+                        </div>
+
+                        <div style="display: flex; gap: 16px; margin-bottom: 24px;">
+                            <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                                <label class="form-label">Start Date</label>
+                                <div class="input-icon-wrapper">
+                                    <input type="text" class="form-control" value="05/23/2026">
+                                    <i class='bx bx-calendar input-icon'></i>
+                                </div>
+                            </div>
+                            <div class="form-group" style="flex: 1; margin-bottom: 0;">
+                                <label class="form-label">End Date</label>
+                                <div class="input-icon-wrapper">
+                                    <input type="text" class="form-control" placeholder="mm/dd/yyyy">
+                                    <i class='bx bx-calendar input-icon'></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="text-align: right;">
+                            <button class="btn btn-primary" onclick="alert('In the real app, this will collapse back into a summary card!');">Save & Collapse</button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            goalsList.insertAdjacentHTML('beforeend', newGoalHtml);
+        }
+    </script>
+</body>
+</html>
